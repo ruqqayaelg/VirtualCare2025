@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientEHRController"
+            prefWidth="600" prefHeight="500">
+
+    <top>
+        <Label text="My Health Records"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <ListView fx:id="ehrList"
+                  prefWidth="550"
+                  prefHeight="380"
+                  style="-fx-padding: 15;"/>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientProfileController"
+            prefWidth="650" prefHeight="500">
+
+    <top>
+        <Label text="My Profile"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="12" alignment="CENTER">
+
+            <TextField fx:id="nameField" promptText="Full Name" prefWidth="300" editable="false"/>
+            <TextField fx:id="emailField" promptText="Email" prefWidth="300" editable="false"/>
+            <TextArea fx:id="historyField" promptText="Medical History" prefWidth="300" prefHeight="80" editable="false"/>
+            <TextField fx:id="contactField" promptText="Contact Information" prefWidth="300" editable="false"/>
+
+            <Label fx:id="messageLabel" style="-fx-text-fill: red;"/>
+
+            <HBox spacing="10">
+                <Button text="Edit Profile" fx:id="editBtn" onAction="#enableEditing" prefWidth="140"/>
+                <Button text="Save Changes" fx:id="saveBtn" onAction="#saveChanges" prefWidth="140" disable="true"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

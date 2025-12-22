@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientAppointmentsController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- ===================== TITLE ===================== -->
+    <top>
+        <Label text="Appointments"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 15;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <center>
+        <VBox spacing="20">
+
+            <!-- SAFE PADDING -->
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <!-- ===================== BOOK APPOINTMENT ===================== -->
+            <VBox spacing="10">
+                <Label text="Book New Appointment"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <HBox spacing="10">
+                    <Label text="Provider:" prefWidth="120"/>
+                    <ComboBox fx:id="providerCombo" prefWidth="300"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label text="Date:" prefWidth="120"/>
+                    <DatePicker fx:id="datePicker" prefWidth="300"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label text="Time Slot:" prefWidth="120"/>
+                    <ComboBox fx:id="timeCombo" prefWidth="300"/>
+                </HBox>
+
+                <Button text="Book Appointment"
+                        prefWidth="200"
+                        onAction="#bookAppointment"/>
+            </VBox>
+
+            <Separator/>
+
+            <!-- ===================== MY APPOINTMENTS ===================== -->
+            <VBox spacing="10">
+                <Label text="My Appointments"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <TableView fx:id="appointmentsTable" prefHeight="250">
+                    <columns>
+                        <TableColumn fx:id="providerColumn" text="Provider" prefWidth="200"/>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"/>
+                        <TableColumn fx:id="timeColumn" text="Time" prefWidth="150"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+                    </columns>
+                </TableView>
+
+                <!-- STATUS WARNING -->
+                <Label fx:id="statusWarningLabel"
+                       style="-fx-text-fill: red;"/>
+
+                <HBox spacing="10">
+                    <Button fx:id="cancelBtn"
+                            text="Cancel Selected"
+                            onAction="#cancelAppointment"/>
+                    <Button text="Back"
+                            onAction="#goBack"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

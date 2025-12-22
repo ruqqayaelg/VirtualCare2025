@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.BillingPaymentController"
+            prefWidth="450" prefHeight="500">
+
+    <top>
+        <Label text="Secure Payment"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="12">
+
+            <Label fx:id="billInfoLabel" style="-fx-font-size: 16px;" />
+
+            <TextField fx:id="cardNumberField" promptText="Card Number" prefWidth="300"/>
+            <TextField fx:id="expiryField" promptText="Expiry (MM/YY)" prefWidth="300"/>
+            <PasswordField fx:id="cvvField" promptText="CVV" prefWidth="300"/>
+            <TextField fx:id="nameField" promptText="Name on Card" prefWidth="300"/>
+
+            <Label fx:id="messageLabel" textFill="red" />
+
+            <Button text="Pay Now"
+                    onAction="#processPayment"
+                    prefWidth="200"/>
+
+            <Button text="Back"
+                    onAction="#goBack"
+                    prefWidth="180"/>
+        </VBox>
+    </center>
+
+</BorderPane>

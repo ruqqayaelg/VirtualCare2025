@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientPrescriptionsController"
+            prefWidth="700" prefHeight="480">
+
+    <top>
+        <Label text="Your Prescriptions"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+
+            <TableView fx:id="prescriptionTable"
+                       AnchorPane.topAnchor="14.0"
+                       AnchorPane.bottomAnchor="55.0"
+                       layoutX="14.0"
+                       layoutY="14.0"
+                       prefWidth="571.0"
+                       prefHeight="371.0">
+
+                <columns>
+                    <TableColumn fx:id="providerColumn"
+                                 text="Provider"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="medicationColumn"
+                                 text="Medication"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="dosageColumn"
+                                 text="Dosage"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="issueDateColumn"
+                                 text="Issue Date"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="endDateColumn"
+                                 text="End Date"
+                                 prefWidth="120"/>
+                </columns>
+
+            </TableView>
+
+            <Label fx:id="messageLabel" style="-fx-text-fill: red; -fx-font-size: 14px;"/>
+
+            <Button text="Renew Selected Prescription"
+                    fx:id="renewBtn"
+                    onAction="#renewPrescription"
+                    prefWidth="250"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

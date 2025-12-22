@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientDashboardController"
+            prefWidth="650" prefHeight="450">
+
+    <top>
+        <Label text="Patient Dashboard"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+
+            <!-- ⭐ NEW PROFILE BUTTON -->
+            <Button text="My Profile"
+                    fx:id="profileBtn"
+                    onAction="#openProfile"
+                    prefWidth="250"/>
+
+            <Button text="Appointments"
+                    fx:id="appointmentsBtn"
+                    onAction="#goToAppointments"
+                    prefWidth="250"/>
+
+            <Button text="Bills and Payments"
+                    fx:id="billsBtn"
+                    onAction="#goToBills"
+                    prefWidth="250"/>
+
+            <Button text="View EHR (Medical Records)"
+                    fx:id="ehrBtn"
+                    onAction="#goToEHR"
+                    prefWidth="250"/>
+
+            <Button text="Prescriptions"
+                    fx:id="prescriptionsBtn"
+                    onAction="#goToPrescriptions"
+                    prefWidth="250"/>
+
+            <Button text="Submit Feedback"
+                    fx:id="feedbackBtn"
+                    onAction="#goToFeedback"
+                    prefWidth="250"/>
+
+            <Button text="Logout"
+                    fx:id="logoutBtn"
+                    onAction="#logout"
+                    prefWidth="250"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientConsultationHistoryController"
+            prefWidth="750" prefHeight="520">
+
+    <!-- TOP SECTION: Title + Reminder -->
+    <top>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 15;">
+            <Label text="Consultation History"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <!-- Warning / Reminder -->
+            <Label fx:id="reminderLabel"
+                   text=""
+                   style="-fx-font-size: 15px; -fx-text-fill: #d9534f;"/>
+        </VBox>
+    </top>
+
+    <!-- CENTER SECTION: Table -->
+    <center>
+        <TableView fx:id="historyTable" prefWidth="700" prefHeight="350">
+            <columns>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="120"/>
+                <TableColumn fx:id="timeColumn" text="Time" prefWidth="120"/>
+                <TableColumn fx:id="providerColumn" text="Provider" prefWidth="200"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- BOTTOM SECTION -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 15;">
+            <Button text="Back"
+                    fx:id="backBtn"
+                    prefWidth="150"
+                    onAction="#goBack"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

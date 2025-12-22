@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientRegisterController"
+            prefWidth="500" prefHeight="550">
+
+    <top>
+        <Label text="Patient Registration"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <VBox spacing="12" alignment="CENTER">
+
+            <TextField fx:id="firstNameField" promptText="First Name" prefWidth="300"/>
+            <TextField fx:id="middleNameField" promptText="Middle Name" prefWidth="300"/>
+            <TextField fx:id="lastNameField" promptText="Last Name" prefWidth="300"/>
+            <TextField fx:id="emailField" promptText="Email" prefWidth="300"/>
+
+            <TextField fx:id="contactField" promptText="Contact Info" prefWidth="300"/>
+
+            <TextArea fx:id="medicalHistoryArea" promptText="Medical History"
+                      prefWidth="300" prefHeight="100"/>
+
+            <PasswordField fx:id="passwordField" promptText="Password" prefWidth="300"/>
+
+            <Button text="Register" onAction="#register" prefWidth="200"/>
+
+            <Label fx:id="messageLabel" textFill="green" style="-fx-font-size: 14px;"/>
+
+            <Button text="Back to Login" prefWidth="200" onAction="#goBack"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

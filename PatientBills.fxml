@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientBillsController"
+            prefWidth="750" prefHeight="480">
+
+    <top>
+        <Label text="Your Bills and Payments"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+
+            <TableView fx:id="billTable" prefWidth="700" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="providerColumn" text="Provider" prefWidth="180"/>
+                    <TableColumn fx:id="amountColumn" text="Amount" prefWidth="150"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="messageLabel" style="-fx-text-fill: red; -fx-font-size: 14px;"/>
+
+            <Button text="Pay Selected Bill"
+                    fx:id="payBtn"
+                    onAction="#payBill"
+                    prefWidth="200"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

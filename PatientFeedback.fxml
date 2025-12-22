@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.patient.PatientFeedbackController"
+            prefWidth="600" prefHeight="450">
+
+    <top>
+        <Label text="Submit Feedback"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+
+            <ComboBox fx:id="providerBox"
+                      promptText="Select Provider"
+                      prefWidth="250"/>
+
+            <ComboBox fx:id="ratingBox"
+                      promptText="Rating"
+                      prefWidth="250"/>
+
+            <TextField fx:id="commentsField"
+                       promptText="Comments"
+                       prefWidth="300"/>
+
+            <Label fx:id="messageLabel"
+                   style="-fx-text-fill: red; -fx-font-size: 14px;"/>
+
+            <Button text="Submit"
+                    fx:id="submitBtn"
+                    onAction="#submitFeedback"
+                    prefWidth="200"/>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                fx:id="backBtn"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>
