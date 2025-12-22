@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.provider.ProviderFeedbackController"
+            prefWidth="750" prefHeight="480">
+
+    <top>
+        <Label text="Feedback from Patients"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <TableView fx:id="feedbackTable" prefWidth="700" prefHeight="350">
+            <columns>
+                <TableColumn fx:id="patientColumn" text="Patient" prefWidth="180"/>
+                <TableColumn fx:id="ratingColumn" text="Rating" prefWidth="120"/>
+                <TableColumn fx:id="commentsColumn" text="Comments" prefWidth="350"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                fx:id="backBtn"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

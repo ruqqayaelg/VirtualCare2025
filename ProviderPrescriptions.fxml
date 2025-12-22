@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.Integer?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.provider.ProviderPrescriptionsController"
+            prefWidth="850" prefHeight="550">
+
+    <!-- ===================== TOP ===================== -->
+    <top>
+        <Label text="Issue Prescriptions"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- ===================== CENTER ===================== -->
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+
+            <!-- ===== TABLE ===== -->
+            <TableView fx:id="prescriptionsTable" prefHeight="250">
+                <columns>
+                    <TableColumn fx:id="rxIdColumn" text="Prescription ID"/>
+                    <TableColumn fx:id="patientIdColumn" text="Patient ID"/>
+                    <TableColumn fx:id="patientNameColumn" text="Patient Name"/>
+                    <TableColumn fx:id="medColumn" text="Medication"/>
+                    <TableColumn fx:id="dosageColumn" text="Dosage"/>
+                    <TableColumn fx:id="issueColumn" text="Issue Date"/>
+                    <TableColumn fx:id="endColumn" text="End Date"/>
+                </columns>
+            </TableView>
+
+            <!-- ===== PATIENT SELECTION (NEW) ===== -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Patient"/>
+                <ComboBox fx:id="patientCombo"
+                          prefWidth="420"
+                          promptText="Select Patient (Name + ID)"/>
+            </HBox>
+
+            <!-- ===== MEDICATION INPUT ===== -->
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="medicationField"
+                           promptText="Medication"
+                           prefWidth="200"/>
+                <TextField fx:id="dosageField"
+                           promptText="Dosage"
+                           prefWidth="200"/>
+            </HBox>
+
+            <!-- ===== DISPENSING LIMIT ===== -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Dispensing Limit (per month)"/>
+                <ComboBox fx:id="dispensingLimitCombo"
+                          prefWidth="200">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <Integer fx:value="1"/>
+                            <Integer fx:value="2"/>
+                            <Integer fx:value="4"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
+
+            <!-- ===== ERROR MESSAGE ===== -->
+            <Label fx:id="errorLabel"
+                   textFill="red"
+                   visible="false"
+                   text="Please complete all required fields."/>
+
+            <!-- ===== ACTION BUTTONS ===== -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Issue Prescription"
+                        onAction="#issuePrescription"
+                        prefWidth="200"/>
+                <Button text="Delete Prescription"
+                        onAction="#deletePrescription"
+                        prefWidth="200"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+    <!-- ===================== BOTTOM ===================== -->
+    <bottom>
+        <Button text="Back"
+                fx:id="backBtn"
+                onAction="#goBack"
+                prefWidth="150"
+                style="-fx-padding: 10;"
+                BorderPane.alignment="CENTER"/>
+    </bottom>
+
+</BorderPane>

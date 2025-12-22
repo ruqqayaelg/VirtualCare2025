@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.provider.ProviderAppointmentsController"
+            prefWidth="800" prefHeight="500">
+
+    <!-- ===== TOP ===== -->
+    <top>
+        <Label text="My Appointments"
+               style="-fx-font-size: 22px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <!-- ===== CENTER ===== -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TableView fx:id="appointmentsTable">
+                <columns>
+                    <TableColumn fx:id="patientColumn" text="Patient"/>
+                    <TableColumn fx:id="dateColumn" text="Date"/>
+                    <TableColumn fx:id="timeColumn" text="Time"/>
+                    <TableColumn fx:id="statusColumn" text="Status"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Cancel Appointment"
+                        onAction="#cancelAppointment"
+                        prefWidth="180"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+    <!-- ===== BOTTOM ===== -->
+    <bottom>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button text="Back"
+                    onAction="#goBack"
+                    prefWidth="120"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

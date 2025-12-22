@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.provider.ProviderAvailabilityController"
+            prefWidth="700" prefHeight="500">
+
+    <top>
+        <Label text="Manage Availability"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-padding: 20;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+
+            <ListView fx:id="availabilityList"
+                      prefWidth="350" prefHeight="250"/>
+
+            <HBox spacing="10" alignment="CENTER">
+                <DatePicker fx:id="datePicker"/>
+                <ComboBox fx:id="timePicker" promptText="Select Time" prefWidth="120"/>
+            </HBox>
+
+            <Button text="Add Slot" fx:id="addSlotBtn" onAction="#addSlot" prefWidth="200"/>
+
+            <Button text="Remove Selected Slot"
+                    fx:id="removeSlotBtn"
+                    onAction="#removeSlot"
+                    prefWidth="220"/>
+
+            <Label fx:id="messageLabel"
+                   style="-fx-text-fill: red; -fx-font-size: 14px;"/>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <Button text="Back"
+                fx:id="backBtn"
+                onAction="#goBack"
+                BorderPane.alignment="CENTER"
+                prefWidth="150"
+                style="-fx-padding: 10;"/>
+    </bottom>
+
+</BorderPane>
