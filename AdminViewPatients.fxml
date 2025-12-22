@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.admin.AdminViewPatientsController"
+            prefWidth="800"
+            prefHeight="500">
+
+    <top>
+        <Label text="All Patients"
+               BorderPane.alignment="CENTER"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="patientsTable">
+            <columns>
+                <TableColumn fx:id="firstNameColumn" text="First Name"/>
+                <TableColumn fx:id="lastNameColumn" text="Last Name"/>
+                <TableColumn fx:id="emailColumn" text="Email"/>
+                <TableColumn fx:id="phoneColumn" text="Phone"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER">
+            <Button text="Back"
+                    onAction="#goBack"
+                    prefWidth="120"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

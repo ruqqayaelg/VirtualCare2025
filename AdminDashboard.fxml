@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.admin.AdminDashboardController"
+      spacing="15"
+      alignment="CENTER"
+      prefWidth="400">
+
+    <Label text="Admin Dashboard"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <Button text="View Providers"
+            onAction="#goToProviders"
+            prefWidth="200"/>
+
+    <Button text="Register Provider"
+            onAction="#goToRegisterProvider"
+            prefWidth="200"/>
+
+    <!-- ✅ FIXED LOGOUT -->
+    <Button text="Logout"
+            onAction="#logout"
+            prefWidth="200"/>
+
+</VBox>

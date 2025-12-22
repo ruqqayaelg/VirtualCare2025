@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.admin.AdminViewProvidersController"
+            prefWidth="800" prefHeight="500">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TableView fx:id="providersTable">
+                <columns>
+                    <TableColumn fx:id="firstNameColumn" text="Name"/>
+                    <TableColumn fx:id="emailColumn" text="Email"/>
+                    <TableColumn fx:id="specialtyColumn" text="Specialty"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Remove Provider"
+                        onAction="#removeProvider"/>
+                <Button text="Back"
+                        onAction="#goBack"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
