@@ -1,0 +1,3 @@
+H001;PROVIDER;Dr. Smith;smith@gmail.com;pass;CARDIOLOGY
+A001;ADMIN;Emma Admin;emma@gmail.com;admin
+P3;PATIENT;ruq mohamed taha;ruq@gmail.com;12345;diabetic;01212111300;H001
